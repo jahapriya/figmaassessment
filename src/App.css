@@ -1,38 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.body.App,
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 500;
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(241, 245, 248, 1);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  width: 100vw;
+  font-family: "Poppins", sans-serif !important;
+  height: 100vh;
+  background-color: rgba(241, 245, 248, 1);
+  font-size: 500;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logoname {
+  font-family: "Montserrat";
 }
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 500;
+}
+.custom-font {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 500;
+}
+.body.App {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 500;
+}
+/* .ant-table-thead {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 500;
+} */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ant-menu-light .ant-menu-item-selected {
+  background-color: rgba(241, 245, 248, 1);
+  color: rgba(48, 168, 75, 1);
+}
+.pageHeader {
+  height: 78px;
+  background: white;
+  margin: 11px;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.icons {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+.innerHeader {
+  font-family: "Poppins", sans-serif;
+  height: -webkit-fill-available;
+  font-size: 500;
+  width: 94%;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(250, 250, 250, 1);
+  margin: 10px;
+  border-radius: 8px;
+}
+:where(.css-dev-only-do-not-override-1drr2mu) a {
+  color: black !important;
+}
+.form {
+  width: 100%;
+}
+.table {
+  max-height: 500px;
+  overflow: auto;
+  background: white;
+  margin: 11px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.topbar {
+  height: 55px;
+  /* margin-left: 20%; */
+  width: 100px;
+  background-color: rgb(179, 149, 31);
+}
+.sidebar {
+  height: 100%;
+  width: 207px;
+  background-color: aqua;
+}
+.sidebarlist {
+  height: auto;
+  width: 100%;
+  padding: 0;
+  background-color: blueviolet;
+}
+.sidebarlist .row:hover {
+  cursor: pointer;
+  background-color: rgb(198, 123, 123);
+}
+.sidebarlist #active {
+  background-color: rgb(29, 117, 102);
+}
+.sidebarlist .row {
+  height: 40px;
+  padding: 5px 3px 5px 5px;
+  width: 200px;
+  background-color: olive;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   color: white;
+  align-items: center;
+  font-size: 500;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.row #icon {
+  flex: 30%;
+  place-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row #title {
+  flex: 70%;
 }
