@@ -7,8 +7,6 @@ const Addeditform = ({
   backOption,
   editData,
   update,
-  setImgUrl,
-  imgurl,
   setBread,
   setFormmVisible,
 }) => {
@@ -28,33 +26,8 @@ const Addeditform = ({
     },
   ]);
 
-  const uploadButton = (
-    <button
-      style={{
-        border: 0,
-        background: "none",
-      }}
-      type="button"
-    >
-      <PlusOutlined />
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
-        Upload
-      </div>
-    </button>
-  );
-
   // Submit
-  const onFinish = async (values) => {
-    if (fileList.length > 0) {
-      const base64Image = await getBase64(fileList[0].originFileObj);
-      values.imgurl = base64Image;
-      setImgUrl(base64Image);
-    }
-
+  const onFinish = (values) => {
     if (update) {
       const updatedData = inputValue.map((i) => {
         if (i.id === editData.id) {
@@ -111,14 +84,14 @@ const Addeditform = ({
 
   //upload image
 
-  const getBase64 = (file) => {
-    return new Promise((resolve, reject) => {
+  const getBase64 = (file) =>
+    new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => resolve(reader.result);
       reader.onerror = (error) => reject(error);
     });
-  };
+
   const handleCancel = () => setPreviewOpen(false);
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
@@ -130,21 +103,26 @@ const Addeditform = ({
       file.name || file.url.substring(file.url.lastIndexOf("/") + 1)
     );
   };
+  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+  const uploadButton = (
+    <button
+      style={{
+        border: 0,
+        background: "none",
+      }}
+      type="button"
+    >
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </button>
+  );
 
-  const handleChange = async ({ fileList: newFileList }) => {
-    setFileList(newFileList);
-
-    if (newFileList.length > 0) {
-      const file = newFileList[0].originFileObj || newFileList[0];
-
-      try {
-        const base64Image = await getBase64(file);
-        setImgUrl(base64Image);
-      } catch (error) {
-        console.error("Error converting file to base64:", error);
-      }
-    }
-  };
   return (
     <div className="form">
       <Form onFinish={onFinish} initialValues={update && editData}>
