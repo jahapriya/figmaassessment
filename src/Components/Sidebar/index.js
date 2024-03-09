@@ -35,7 +35,7 @@ function Sidebar({ onSelectMenuItem }) {
           console.log(collapsed, type);
         }}
       >
-        <div className="logo-container">
+        <div className="logo-container" style={{ display: "flex" }}>
           <img className="logo" src={logo} alt="" />
           <p className="logoname">SMART SIGNAGE</p>{" "}
         </div>
