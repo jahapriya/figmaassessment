@@ -1,0 +1,17 @@
+/* StoreLocation.css */
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.innerHeader {
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  margin-top: 20px;
+}

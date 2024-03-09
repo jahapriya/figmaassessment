@@ -4,6 +4,7 @@ import { Button } from "antd";
 import Tabledata from "./Table";
 import Addeditform from "./Addeditform";
 import BreadcrumbPage from "./Breadcrum";
+import "./Store.css";
 
 const StoreLocation = ({ keyValue }) => {
   const [bread, setBread] = useState([{ keyValue: "Store Location" }]);

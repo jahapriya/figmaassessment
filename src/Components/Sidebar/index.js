@@ -1,83 +1,54 @@
-import React, { useState } from "react";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import React from "react";
 import logo from "../../Images/tasklogo.png";
-import { Menu } from "antd";
-import StoreLocation from "../StoreLocation";
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
-const items = [
-  getItem("Store Management", "sub1", null, [
-    getItem("Store Location", "Store Location", <LocationOnOutlinedIcon />),
-  ]),
-];
-const Sidebar = () => {
-  const [keyValue, setKeyValue] = useState("");
-  const onClick = (e) => {
-    setKeyValue(e.key);
-  };
+import { Layout, Menu } from "antd";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+// import "./Sidebar.css";
+
+const { Sider } = Layout;
+
+function Sidebar({ onSelectMenuItem }) {
+  function getItem(label, key, icon, children, type) {
+    return {
+      key,
+      icon,
+      children,
+      label,
+      type,
+    };
+  }
+
+  const items = [
+    getItem("Store Management", "sub1", null, [
+      getItem("Store Location", "Store Location", <LocationOnOutlinedIcon />),
+    ]),
+  ];
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        background: "white",
-        borderRight: "0.1px solid #cacaca",
-      }}
-    >
-      <div
-        style={{
-          height: "30px",
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
+    <div className="sidebar">
+      <Sider
+        theme="light"
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
         }}
       >
-        <img
-          style={{
-            height: "62px",
-            width: "41.48px",
-            top: "15px",
-            position: "relative",
-            left: "15px",
-          }}
-          src={logo}
-          alt=""
-        />
-        <p
-          className="logoname"
-          style={{
-            fontSize: "14px",
-            margin: "36px 0px 0px 26px",
-            fontWeight: 500,
-          }}
-        >
-          SMART SIGNAGE
-        </p>
-      </div>
-      <Menu
-        onClick={onClick}
-        style={{
-          width: "100%",
-          marginTop: "50px",
-          borderTop: "0.1px solid #cacaca",
-          borderBottom: "0.1px solid #cacaca",
-        }}
-        defaultSelectedKeys={["Store Location"]}
-        defaultOpenKeys={["sub1"]}
-        mode="inline"
-        items={items}
-      />
-      <div style={{ display: "none" }}>
-        <StoreLocation keyValue={"Store Location"} />
-      </div>
+        <div className="logo-container">
+          <img className="logo" src={logo} alt="" />
+          <p className="logoname">SMART SIGNAGE</p>{" "}
+        </div>
+        <Menu
+          theme="light"
+          mode="inline"
+          defaultOpenKeys={["sub1"]}
+          defaultSelectedKeys={["Store Location"]}
+          items={items}
+        ></Menu>
+      </Sider>
     </div>
   );
-};
+}
+
 export default Sidebar;

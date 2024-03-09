@@ -2,6 +2,7 @@ import { Form, Input, Select, Row, Col, Button, notification } from "antd";
 import React, { useState, useEffect } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { Modal, Upload } from "antd";
+import "./Addeditform.css";
 
 const Addeditform = ({
   backOption,
@@ -127,8 +128,8 @@ const Addeditform = ({
     <div className="form">
       <Form onFinish={onFinish} initialValues={update && editData}>
         <Row>
-          <Col span={8}>
-            <>
+          <div className="uploadcss">
+            <Col span={8}>
               <Upload
                 action="https://run.mocky.io//435e224c-44fb-4773-9faf-380c5e6a2188"
                 listType="picture-card"
@@ -152,9 +153,11 @@ const Addeditform = ({
                   src={previewImage}
                 />
               </Modal>
-            </>
-          </Col>
+            </Col>
+          </div>
+          <Col span={4}> </Col>
         </Row>
+
         <Row>
           <Col span={4}> </Col>
           <Col span={9}>
@@ -333,37 +336,37 @@ const Addeditform = ({
             </Form.Item>
           </Col>
         </Row>
-
-        <Row>
-          <Col span={18}></Col>
-          <Col span={2}>
-            {" "}
-            <Form.Item>
-              <Button
-                block
-                type="primary"
-                htmlType="button"
-                onClick={onReset}
-                style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
-              >
-                Back
-              </Button>
-            </Form.Item>
-          </Col>
-          &nbsp; &nbsp;
-          <Col span={2}>
-            <Form.Item>
-              <Button
-                block
-                type="primary"
-                htmlType="submit"
-                style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
-              >
-                {update ? "Update" : "Create"}
-              </Button>
-            </Form.Item>
-          </Col>
-        </Row>
+        <div className="buttoncss">
+          <Row>
+            <Col span={10}>
+              {" "}
+              <Form.Item>
+                <Button
+                  block
+                  type="primary"
+                  htmlType="button"
+                  onClick={onReset}
+                  style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
+                >
+                  Back
+                </Button>
+              </Form.Item>
+            </Col>
+            &nbsp; &nbsp;
+            <Col span={10}>
+              <Form.Item>
+                <Button
+                  block
+                  type="primary"
+                  htmlType="submit"
+                  style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
+                >
+                  {update ? "Update" : "Create"}
+                </Button>
+              </Form.Item>
+            </Col>
+          </Row>
+        </div>
       </Form>
     </div>
   );

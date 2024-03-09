@@ -1,0 +1,28 @@
+.topbar-container {
+  background: white;
+  height: 80px;
+}
+
+.topbar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90px;
+}
+
+.language,
+.notifications,
+.user-dropdown {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+  }
+}

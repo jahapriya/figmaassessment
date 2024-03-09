@@ -1,0 +1,28 @@
+Sidebar.css .sidebar-container {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  border-right: 0.1px solid #cacaca;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo {
+  height: 62px;
+  width: 41.48px;
+  margin-right: 15px;
+}
+
+.logoname {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.store-location-container {
+  display: none;
+}

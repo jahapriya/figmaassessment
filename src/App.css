@@ -5,6 +5,19 @@ html {
   font-family: "Poppins", sans-serif;
   font-size: 500;
 }
+.icongap {
+  display: "flex";
+  justify-content: "flex-end";
+}
+
+.Mobileviewtop {
+  width: 80vw;
+  background: "#fff";
+}
+
+.uploadcss {
+  display: contents;
+}
 
 .App {
   width: 100vw;
@@ -35,10 +48,6 @@ html {
   font-family: "Poppins", sans-serif !important;
   font-size: 500;
 }
-/* .ant-table-thead {
-  font-family: "Poppins", sans-serif !important;
-  font-size: 500;
-} */
 
 .ant-menu-light .ant-menu-item-selected {
   background-color: rgba(241, 245, 248, 1);
@@ -76,6 +85,13 @@ html {
 :where(.css-dev-only-do-not-override-1drr2mu) a {
   color: black !important;
 }
+
+.buttoncss {
+  display: flex;
+  /* width: 70vw; */
+  justify-content: flex-end;
+}
+
 .form {
   width: 100%;
 }
@@ -98,8 +114,8 @@ html {
 }
 .sidebar {
   height: 100%;
-  width: 207px;
-  background-color: aqua;
+  /* width: 207px; */
+  background-color: white;
 }
 .sidebarlist {
   height: auto;
@@ -136,4 +152,25 @@ html {
 }
 .row #title {
   flex: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .icongap {
+    display: "flex";
+    justify-content: "flex-start";
+  }
+  .Mobileviewtop {
+    width: 100vw;
+    background: "#fff";
+  }
+  .buttoncss {
+    display: flex;
+    width: 70vw;
+    justify-content: center;
+  }
+  .uploadcss {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 400px !important;
+  }
 }

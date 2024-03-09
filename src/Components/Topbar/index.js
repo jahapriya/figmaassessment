@@ -5,6 +5,7 @@ import { Avatar, Space, Dropdown } from "antd";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import { Col, Row } from "antd";
 import userlogo from "../../Images/foodnetworklogo.png";
+import "./Topbar.css";
 
 const Topbar = () => {
   const items = [
@@ -22,58 +23,36 @@ const Topbar = () => {
       ),
     },
   ];
+
   return (
     <header>
-      <div style={{ background: "white", height: "80px" }}>
+      <div className="topbar-container">
         <Row>
           <Col span={12} />
           <Col span={12}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-                height: "90px",
-              }}
-            >
-              <div>
+            <div className="topbar-content">
+              <div className="language">
                 <p>
-                  English{" "}
-                  <LanguageOutlinedIcon style={{ position: "absolute" }} />
+                  English <LanguageOutlinedIcon />
                 </p>
               </div>
-              <div>
+              <div className="notifications">
                 <p>
                   <NotificationsNoneOutlinedIcon />
                 </p>
               </div>
-              <div>
-                <Dropdown
-                  menu={{
-                    items,
-                  }}
-                >
+              <div className="user-dropdown">
+                <Dropdown menu={{ items }}>
                   <a onClick={(e) => e.preventDefault()}>
-                    <Space
-                      style={{ marginTop: "3px" }}
-                      direction="vertical"
-                      size={16}
-                    >
-                      <Space
-                        style={{ marginTop: "19px", marginRight: "12px" }}
-                        wrap
-                        size={16}
-                      >
-                        <Avatar src={userlogo} style={{ marginTop: "2px" }} />
+                    <Space direction="vertical" size={18}>
+                      <Space wrap size={18}>
+                        <Avatar src={userlogo} />
                       </Space>
                     </Space>
                     <Space>
                       <p>
                         Karthikraj
-                        <p style={{ fontWeight: "lighter", marginTop: "2px" }}>
-                          Admin
-                        </p>
+                        <p className="user-role">Admin</p>
                       </p>
                       <DownOutlined />
                     </Space>
