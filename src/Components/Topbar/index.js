@@ -1,7 +1,7 @@
 import React from "react";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { DownOutlined } from "@ant-design/icons";
-import { Avatar, Space, Dropdown } from "antd";
+import { Avatar, Dropdown } from "antd";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import { Col, Row } from "antd";
 import userlogo from "../../Images/foodnetworklogo.png";
@@ -32,9 +32,17 @@ const Topbar = () => {
           <Col span={12}>
             <div className="topbar-content">
               <div className="language">
-                <p>
-                  English <LanguageOutlinedIcon />
-                </p>
+                <div>
+                  <p className="fontfamily" style={{ fontWeight: "500" }}>
+                    English
+                  </p>
+                </div>
+                &nbsp;&nbsp;
+                <div>
+                  <p>
+                    <LanguageOutlinedIcon />
+                  </p>
+                </div>
               </div>
               <div className="notifications">
                 <p>
@@ -43,19 +51,24 @@ const Topbar = () => {
               </div>
               <div className="user-dropdown">
                 <Dropdown menu={{ items }}>
-                  <a onClick={(e) => e.preventDefault()}>
-                    <Space direction="vertical" size={18}>
-                      <Space wrap size={18}>
-                        <Avatar src={userlogo} />
-                      </Space>
-                    </Space>
-                    <Space>
-                      <p>
-                        Karthikraj
-                        <p className="user-role">Admin</p>
+                  <a className="anchorcss" onClick={(e) => e.preventDefault()}>
+                    <div>
+                      <Avatar src={userlogo} />
+                    </div>
+                    &nbsp;
+                    <div className="user-role">
+                      <p className="fontfamily">Karthikraj</p>
+                      <p
+                        className="fontfamily"
+                        style={{ color: "Grey", marginTop: "-10px" }}
+                      >
+                        Admin
                       </p>
-                      <DownOutlined />
-                    </Space>
+                    </div>
+                    &nbsp; &nbsp;
+                    <div className="arrowcss">
+                      <DownOutlined style={{ color: "Grey" }} />
+                    </div>
                   </a>
                 </Dropdown>
               </div>

@@ -10,11 +10,7 @@ function App() {
       <Layout style={{ height: "100vh" }}>
         <Sidebar />
         <Layout>
-          <Content
-            style={{
-              margin: "5px 5px 0",
-            }}
-          >
+          <Content>
             <MainContent />
           </Content>
         </Layout>

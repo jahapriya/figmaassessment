@@ -49,6 +49,7 @@ const StoreLocation = ({ keyValue }) => {
             editData={editData}
             setImgUrl={setImgUrl}
             setFormmVisible={setFormmVisible}
+            setUpdate={setUpdate}
             update={update}
             setBread={setBread}
           />

@@ -411,6 +411,7 @@ const Tabledata = ({
           </div>
         </div>
       </div>
+      &nbsp;
       <div id="table-container">
         <Table columns={columns} dataSource={data} />
       </div>

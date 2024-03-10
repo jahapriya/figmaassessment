@@ -5,6 +5,38 @@ html {
   font-family: "Poppins", sans-serif;
   font-size: 500;
 }
+
+.language {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.anchorcss {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.ant-upload-wrapper.avatar-uploader.css-dev-only-do-not-override-1drr2mu.ant-upload-picture-card-wrapper {
+  margin-left: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .formcss {
+    margin-top: 80% !important;
+    margin-left: -65px;
+  }
+  .uploadfile {
+    margin-top: 25px !important;
+  }
+  .fields {
+    margin-top: 120px !important;
+  }
+  .ant-upload.ant-upload-select {
+    margin-left: 65px;
+  }
+}
 .icongap {
   display: "flex";
   justify-content: "flex-end";
@@ -31,8 +63,12 @@ html {
   background-color: rgba(241, 245, 248, 1);
   font-size: 500;
 }
+.ant-menu-title-content {
+  font-family: "Poppins", sans-serif !important;
+}
 .logoname {
-  font-family: "Montserrat";
+  margin-top: 25px;
+  font-family: "Poppins", sans-serif !important;
 }
 .body {
   margin: 0;
@@ -52,6 +88,10 @@ html {
 .ant-menu-light .ant-menu-item-selected {
   background-color: rgba(241, 245, 248, 1);
   color: rgba(48, 168, 75, 1);
+}
+.fontfamily,
+.ant-breadcrumb-link {
+  font-family: "Poppins", sans-serif;
 }
 .pageHeader {
   height: 78px;
@@ -155,6 +195,28 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  #root {
+    overflow-x: hidden;
+  }
+  /* .siderroll
+    > .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
+    margin-left: 90px;
+    margin-top: 4px;
+  } */
+  .siderroll > span {
+    margin-left: 190px;
+    margin-top: 4px;
+  }
+  .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
+    top: 25px !important;
+    left: 6px;
+  }
+  .user-role {
+    display: none;
+  }
+  .arrowcss {
+    display: none;
+  }
   .icongap {
     display: "flex";
     justify-content: "flex-start";
