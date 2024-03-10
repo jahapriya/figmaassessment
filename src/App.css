@@ -34,7 +34,7 @@ html {
     margin-top: 120px !important;
   }
   .ant-upload.ant-upload-select {
-    margin: -8px 0px 0px 82px !important;
+    margin: -8px 0px 0px 86px !important;
   }
 }
 .icongap {
@@ -91,7 +91,7 @@ html {
 }
 .fontfamily,
 .ant-breadcrumb-link {
-  color: black;
+  color: black !important;
   font-family: "Poppins", sans-serif;
 }
 .pageHeader {
@@ -199,7 +199,13 @@ html {
   #root {
     overflow-x: hidden;
   }
-
+  :where(.css-dev-only-do-not-override-1drr2mu) a {
+    color: black !important;
+  }
+  .ant-breadcrumb-link {
+    color: black !important;
+    font-family: "Poppins", sans-serif;
+  }
   /* .siderroll
     > .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
     margin-left: 90px;
