@@ -43,7 +43,7 @@ html {
 }
 
 .Mobileviewtop {
-  width: 80vw;
+  width: 83vw;
   background: "#fff";
 }
 
@@ -91,6 +91,7 @@ html {
 }
 .fontfamily,
 .ant-breadcrumb-link {
+  color: black;
   font-family: "Poppins", sans-serif;
 }
 .pageHeader {
@@ -197,6 +198,9 @@ html {
 @media screen and (max-width: 768px) {
   #root {
     overflow-x: hidden;
+  }
+  .ant-upload.ant-upload-select {
+    margin: "-4px 0px 0px 87px";
   }
   /* .siderroll
     > .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
