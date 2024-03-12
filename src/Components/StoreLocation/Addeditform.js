@@ -2,6 +2,7 @@ import { Form, Input, Select, Row, Col, Button, notification } from "antd";
 import React, { useState, useEffect } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { Upload, message } from "antd";
+import { ReactComponent as CustomUploadIcon } from "../../Images/ant-design_cloud-upload-outlined.svg";
 import "./Addeditform.css";
 
 const beforeUpload = (file) => {
@@ -155,244 +156,347 @@ const Addeditform = ({
 
   return (
     <div className="form">
-      <Form onFinish={onFinish} initialValues={update && editData}>
+      <Form
+        layout="vertical"
+        onFinish={onFinish}
+        initialValues={update && editData}
+      >
         <Row className="formcss">
-          <Col className="uploadfile" span={2}>
+          <Col className="uploadfile" span={6}>
             <Upload
               name="avatar"
+              iconRender={<CustomUploadIcon />}
               listType="picture-card"
               className="avatar-uploader"
               showUploadList={false}
               action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-              beforeUpload={beforeUpload}
+              // beforeUpload={beforeUpload}
+              beforeUpload={() => false}
               onChange={handleChange}
             >
-              {imageUrl ? (
-                <img
-                  src={imageUrl}
-                  alt="avatar"
-                  style={{
-                    width: "100%",
-                  }}
-                />
-              ) : (
-                uploadButton
-              )}
+              <CustomUploadIcon width="50px" height="50px" />
+              <div
+                style={{ fontFamily: "Poppins, sans-serif", fontWeight: 500 }}
+              >
+                <p>
+                  Click or{" "}
+                  <span
+                    style={{
+                      color: "rgba(48, 168, 75, 1)",
+                      fontWeight: "700",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Browse
+                  </span>{" "}
+                  to Upload Images
+                </p>
+              </div>
             </Upload>
           </Col>
-          <Col className="fields" span={22}>
-            <Row>
-              <Col span={4}> </Col>
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Store Name
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="storename"
-                >
-                  <Input placeholder="Store Name" required></Input>
-                </Form.Item>
-              </Col>
-              &nbsp;&nbsp;
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Store ID
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="storeid"
-                >
-                  <Input placeholder="Store ID" required></Input>
-                </Form.Item>
-              </Col>
-            </Row>
 
-            <Row>
-              <Col span={4}></Col>
-              <Col span={18}>
-                <Form.Item label="Description" name="description">
-                  <Input placeholder="Description" required></Input>
-                </Form.Item>
-              </Col>
-            </Row>
+          <Col className="fields" span={18}>
+            <div className="fieldcontent">
+              <Row>
+                {/* <Col span={4}> </Col> */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Store Name
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="storename"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Enter Store Name"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+                {/* &nbsp; */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Store ID
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="storeid"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Enter Store ID"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+              </Row>
 
-            <Row>
-              <Col span={4}></Col>
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Time Zone
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="timezone"
-                >
-                  <Select>
-                    <Select.Option value="Kolkata">Kolkata time</Select.Option>
-                    <Select.Option value="India">India time</Select.Option>
-                    <Select.Option value="US">US time</Select.Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-              &nbsp;&nbsp;
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Country
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="country"
-                >
-                  <Select>
-                    <Select.Option value="Iceland">Iceland</Select.Option>
-                    <Select.Option value="India">India</Select.Option>
-                    <Select.Option value="Iran">Iran</Select.Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={4}></Col>
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      State
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="state"
-                >
-                  <Select>
-                    <Select.Option value="Karnataka">Karnataka</Select.Option>
-                    <Select.Option value="Kerala">Kerala</Select.Option>
-                    <Select.Option value="Haryana">Haryana</Select.Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-              &nbsp;&nbsp;
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      City
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="city"
-                >
-                  <Select>
-                    <Select.Option value="Hyderabad">Hyderabad </Select.Option>
-                    <Select.Option value="Ahmadabad">Ahmadabad</Select.Option>
-                    <Select.Option value="Jaipur">Jaipur </Select.Option>
-                  </Select>
-                </Form.Item>
-              </Col>
-            </Row>
+              <Row>
+                {/* <Col span={4}></Col> */}
+                <Col span={24}>
+                  <Form.Item label="Description" name="description">
+                    <Input
+                      style={{ height: "48px", width: "860px" }}
+                      placeholder="Enter Description"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+              </Row>
 
-            <Row>
-              <Col span={4}></Col>
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Area
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="area"
-                >
-                  <Input placeholder="Area" required></Input>
-                </Form.Item>
-              </Col>
-              &nbsp;&nbsp;
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Pincode
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="pincode"
-                >
-                  <Input placeholder="Pincode" required></Input>
-                </Form.Item>
-              </Col>
-            </Row>
+              <Row>
+                {/* <Col span={4}></Col> */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Time Zone
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="timezone"
+                  >
+                    <Select
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                    >
+                      <Select.Option value="Kolkata">
+                        Kolkata time
+                      </Select.Option>
+                      <Select.Option value="India">India time</Select.Option>
+                      <Select.Option value="US">US time</Select.Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+                {/* &nbsp;&nbsp; */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Country
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="country"
+                  >
+                    <Select
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                    >
+                      <Select.Option value="Iceland">Iceland</Select.Option>
+                      <Select.Option value="India">India</Select.Option>
+                      <Select.Option value="Iran">Iran</Select.Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
 
-            <Row>
-              <Col span={4}></Col>
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Latitude & Longitude
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="latlong"
-                >
-                  <Input placeholder="Latitude & Longitude" required></Input>
-                </Form.Item>
-              </Col>
-              &nbsp;&nbsp;
-              <Col span={9}>
-                <Form.Item
-                  label={
-                    <span>
-                      Zone
-                      <span style={{ color: "red" }}>*</span>
-                    </span>
-                  }
-                  name="zone"
-                >
-                  <Input placeholder="Zone" required></Input>
-                </Form.Item>
-              </Col>
-            </Row>
+              <Row>
+                {/* <Col span={4}></Col> */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        State
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="state"
+                  >
+                    <Select
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                    >
+                      <Select.Option value="Karnataka">Karnataka</Select.Option>
+                      <Select.Option value="Kerala">Kerala</Select.Option>
+                      <Select.Option value="Haryana">Haryana</Select.Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+                {/* &nbsp;&nbsp; */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        City
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="city"
+                  >
+                    <Select
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                    >
+                      <Select.Option value="Hyderabad">
+                        Hyderabad{" "}
+                      </Select.Option>
+                      <Select.Option value="Ahmadabad">Ahmadabad</Select.Option>
+                      <Select.Option value="Jaipur">Jaipur </Select.Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <Row>
+                {/* <Col span={4}></Col> */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Area
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="area"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Enter State Area"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+                {/* &nbsp;&nbsp; */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Pincode
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="pincode"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Enter Pincode"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <Row>
+                {/* <Col span={4}></Col> */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Latitude & Longitude
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="latlong"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Latitude & Longitude"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+                {/* &nbsp;&nbsp; */}
+                <Col span={12}>
+                  <Form.Item
+                    label={
+                      <span>
+                        Zone
+                        <span style={{ color: "red" }}>*</span>
+                      </span>
+                    }
+                    name="Enter Zone"
+                  >
+                    <Input
+                      style={{
+                        height: "48px",
+                        width: "400px",
+                        fontWeight: "400px",
+                      }}
+                      placeholder="Zone"
+                      required
+                    ></Input>
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <div className="buttoncss">
+                <Row>
+                  <Col span={10}>
+                    {" "}
+                    <Form.Item>
+                      <Button
+                        block
+                        type="primary"
+                        htmlType="button"
+                        onClick={onReset}
+                        style={{
+                          background: "rgba(48, 168, 75, 1)",
+                          color: "white",
+                        }}
+                      >
+                        Back
+                      </Button>
+                    </Form.Item>
+                  </Col>
+                  &nbsp; &nbsp;
+                  <Col span={12}>
+                    <Form.Item>
+                      <Button
+                        block
+                        type="primary"
+                        htmlType="submit"
+                        style={{
+                          background: "rgba(48, 168, 75, 1)",
+                          color: "white",
+                        }}
+                      >
+                        {update ? "Update" : "Create"}
+                      </Button>
+                    </Form.Item>
+                  </Col>
+                </Row>
+              </div>
+            </div>
           </Col>
         </Row>
-
-        <div className="buttoncss">
-          <Row>
-            <Col span={10}>
-              {" "}
-              <Form.Item>
-                <Button
-                  block
-                  type="primary"
-                  htmlType="button"
-                  onClick={onReset}
-                  style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
-                >
-                  Back
-                </Button>
-              </Form.Item>
-            </Col>
-            &nbsp; &nbsp;
-            <Col span={10}>
-              <Form.Item>
-                <Button
-                  block
-                  type="primary"
-                  htmlType="submit"
-                  style={{ background: "rgba(48, 168, 75, 1)", color: "white" }}
-                >
-                  {update ? "Update" : "Create"}
-                </Button>
-              </Form.Item>
-            </Col>
-          </Row>
-        </div>
       </Form>
     </div>
   );

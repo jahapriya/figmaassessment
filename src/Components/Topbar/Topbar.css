@@ -5,6 +5,7 @@
 
 .topbar-content {
   display: flex;
+  margin-right: -23px;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;

@@ -1,8 +1,8 @@
 import React from "react";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import { ReactComponent as CustomUploadIcon } from "../../Images/iconoir_language.svg";
+import { ReactComponent as Notification } from "../../Images/notification.svg";
 import { DownOutlined } from "@ant-design/icons";
 import { Avatar, Dropdown } from "antd";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import { Col, Row } from "antd";
 import userlogo from "../../Images/foodnetworklogo.png";
 import "./Topbar.css";
@@ -28,8 +28,8 @@ const Topbar = () => {
     <header>
       <div className="topbar-container">
         <Row>
-          <Col span={12} />
-          <Col span={12}>
+          <Col span={14} />
+          <Col span={10}>
             <div className="topbar-content">
               <div className="language">
                 <div>
@@ -40,13 +40,13 @@ const Topbar = () => {
                 &nbsp;&nbsp;
                 <div>
                   <p>
-                    <LanguageOutlinedIcon />
+                    <CustomUploadIcon width="24px" height="24px" />
                   </p>
                 </div>
               </div>
               <div className="notifications">
                 <p>
-                  <NotificationsNoneOutlinedIcon />
+                  <Notification width="24px" height="24px" />
                 </p>
               </div>
               <div className="user-dropdown">
@@ -59,15 +59,17 @@ const Topbar = () => {
                     <div className="user-role">
                       <p className="fontfamily">Karthikraj</p>
                       <p
-                        className="fontfamily"
-                        style={{ color: "Grey", marginTop: "-10px" }}
+                        className="fontfamilyy"
+                        style={{
+                          marginTop: "-10px",
+                        }}
                       >
                         Admin
                       </p>
                     </div>
                     &nbsp; &nbsp;
                     <div className="arrowcss">
-                      <DownOutlined style={{ color: "Grey" }} />
+                      <DownOutlined style={{ color: "black" }} />
                     </div>
                   </a>
                 </Dropdown>

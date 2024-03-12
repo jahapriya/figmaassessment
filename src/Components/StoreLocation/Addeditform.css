@@ -1,15 +1,16 @@
 .form {
-  max-width: 900px;
-  margin: 0 auto;
+  max-height: 470px;
+  /* margin-top: 22%; */
+  /* margin: 0 auto; */
 }
 
 .icons {
   display: flex;
   margin-bottom: 10px;
 }
-.formcss {
+/* .formcss {
   margin-top: 50px;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .icons {

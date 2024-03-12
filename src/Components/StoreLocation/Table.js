@@ -3,13 +3,12 @@ import Papa from "papaparse";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import * as XLSX from "xlsx";
 import React, { useState, useEffect } from "react";
-import {
-  ExportOutlined,
-  InsertRowAboveOutlined,
-  ColumnHeightOutlined,
-  ExpandOutlined,
-  FunnelPlotOutlined,
-} from "@ant-design/icons";
+import { ReactComponent as ExportOutlined } from "../../Images/export.svg";
+import { ReactComponent as FunnelPlotOutlined } from "../../Images/fluent_filter-24-filled.svg";
+import { ReactComponent as InsertRowAboveOutlined } from "../../Images/tabler_columns-3.svg";
+import { ReactComponent as ColumnHeightOutlined } from "../../Images/ic_baseline-density-large.svg";
+import { ReactComponent as ExpandOutlined } from "../../Images/ic_outline-fullscreen.svg";
+
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -203,8 +202,9 @@ const Tabledata = ({
       filteredValue: filters.country ? [filters.country] : null,
     },
     {
-      title: "Action",
+      title: "",
       key: "action",
+      className: "Actionname",
       render: (_, record) => (
         <Dropdown
           overlay={
@@ -391,23 +391,29 @@ const Tabledata = ({
           {" "}
           <div className="styleExcel">
             <Dropdown overlay={exportMenu}>
-              <Button icon={<ExportOutlined />} />
+              <Button icon={<ExportOutlined />} className="custom-button">
+                <span style={{ fontFamily: "Poppins" }}>Export</span>
+              </Button>
             </Dropdown>
           </div>
           <div className="filter">
             <Button
-              icon={<FunnelPlotOutlined />}
+              icon={<FunnelPlotOutlined width="20px" height="20px" />}
               onClick={toggleFilterVisible}
             />
           </div>
           <div className="grid">
-            <Button icon={<InsertRowAboveOutlined />} />
+            <Button
+              icon={<InsertRowAboveOutlined width="20px" height="20px" />}
+            />
           </div>
           <div className="column">
-            <Button icon={<ColumnHeightOutlined />} />
+            <Button
+              icon={<ColumnHeightOutlined width="20px" height="20px" />}
+            />
           </div>
           <div className="expand">
-            <Button icon={<ExpandOutlined />} />
+            <Button icon={<ExpandOutlined width="20px" height="20px" />} />
           </div>
         </div>
       </div>
