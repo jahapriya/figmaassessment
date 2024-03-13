@@ -35,14 +35,14 @@ html {
 
 @media screen and (max-width: 768px) {
   .formcss {
-    margin-top: 80% !important;
+    margin-top: 20px !important;
     margin-left: -65px;
   }
   .uploadfile {
-    margin-top: 25px !important;
+    /* margin-top: 25px !important; */
   }
   .fields {
-    margin-top: 120px !important;
+    margin-top: 238px !important;
     border-right: 0.01pxsolid rgba(202, 202, 202, 1);
     border-radius: 5px;
   }
@@ -64,6 +64,20 @@ html {
   display: contents;
 }
 
+.ant-menu-submenu-arrow {
+  display: none;
+}
+.ant-menu-item.ant-menu-item-selected {
+  padding-left: 21px !important;
+}
+:where(.css-dev-only-do-not-override-1drr2mu).ant-menu-inline.ant-menu-root
+  .ant-menu-item
+  > .ant-menu-title-content,
+:where(.css-dev-only-do-not-override-1drr2mu).ant-menu-inline.ant-menu-root
+  .ant-menu-submenu-title
+  > .ant-menu-title-content {
+  overflow: unset !important;
+}
 .App {
   width: 100%;
   font-family: "Poppins", sans-serif !important;
@@ -88,6 +102,9 @@ html {
   font-family: "Poppins", sans-serif !important;
   font-size: 500;
 }
+.ant-modal-confirm-title {
+  font-weight: 500 !important;
+}
 .body.App {
   font-family: "Poppins", sans-serif !important;
   font-size: 500;
@@ -95,11 +112,21 @@ html {
 .ant-dropdown-trigger.ant-table-filter-trigger {
   display: none;
 }
+.ant-modal-content {
+  padding-top: 70px !important;
+  text-align: center;
+  width: 558px;
+  height: 260px;
+  font-family: "Poppins", sans-serif !important;
+}
 :where(.css-dev-only-do-not-override-1drr2mu).ant-btn-default {
   border-color: #fff;
 }
-
+.ant-menu-submenu-title {
+  font-weight: 500;
+}
 .ant-menu-light .ant-menu-item-selected {
+  font-weight: 400;
   background-color: rgba(241, 245, 248, 1);
   color: rgba(48, 168, 75, 1);
 }
@@ -127,8 +154,20 @@ html {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-.styleExcel > span {
-  font-family: "Poppins", sans-serif !important;
+.ant-table-tbody {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.ant-table-thead > tr > th {
+  /* border: 0.05px solid rgba(202, 202, 202, 1) !important; */
+  border-right-width: 0 !important;
+  color: rgba(25, 132, 49, 1);
+  font-weight: 400 !important;
+  background: #f7fef8 !important;
+}
+.ant-table-thead,
+.ant-table-thead > .ant-table-cell {
+  background: #f7fef8 !important;
 }
 .pageHeader {
   height: 78px;
@@ -255,8 +294,25 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .table {
+    overflow: auto;
+  }
+  .gridicon {
+    padding-right: 115px;
+  }
+  .ant-upload.ant-upload-select {
+    text-align: "-webkit-center";
+    width: 160px !important;
+    height: 157px !important;
+  }
+  /* .ant-row.css-dev-only-do-not-override-1drr2mu {
+    padding-right: 45px !important;
+  } */
   #root {
     overflow-x: hidden;
+  }
+  .ant-table-thead {
+    background-color: rgba(247, 254, 248, 1);
   }
   :where(.css-dev-only-do-not-override-1drr2mu) a {
     color: black !important;

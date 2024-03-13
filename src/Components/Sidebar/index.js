@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import logo from "../../Images/tasklogo.png";
 import { Layout, Menu } from "antd";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import { ReactComponent as LocationOnOutlinedIcon } from "../../Images/location.svg";
 // import "./Sidebar.css";
 
 const { Sider } = Layout;
 
-function Sidebar({ onSelectMenuItem }) {
+function Sidebar() {
   function getItem(label, key, icon, children, type) {
     return {
       key,
@@ -20,7 +20,11 @@ function Sidebar({ onSelectMenuItem }) {
 
   const items = [
     getItem("Store Management", "sub1", null, [
-      getItem("Store Location", "Store Location", <LocationOnOutlinedIcon />),
+      getItem(
+        "Store Location",
+        "Store Location",
+        <LocationOnOutlinedIcon width={"20px"} height={"20px"} />
+      ),
     ]),
   ];
   return (

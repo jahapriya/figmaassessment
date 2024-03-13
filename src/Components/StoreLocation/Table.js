@@ -1,6 +1,5 @@
 import { Table, Button, notification, Menu, Dropdown, Modal } from "antd";
 import Papa from "papaparse";
-import { ExclamationCircleOutlined } from "@ant-design/icons";
 import * as XLSX from "xlsx";
 import React, { useState, useEffect } from "react";
 import { ReactComponent as ExportOutlined } from "../../Images/export.svg";
@@ -8,7 +7,6 @@ import { ReactComponent as FunnelPlotOutlined } from "../../Images/fluent_filter
 import { ReactComponent as InsertRowAboveOutlined } from "../../Images/tabler_columns-3.svg";
 import { ReactComponent as ColumnHeightOutlined } from "../../Images/ic_baseline-density-large.svg";
 import { ReactComponent as ExpandOutlined } from "../../Images/ic_outline-fullscreen.svg";
-
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -232,14 +230,34 @@ const Tabledata = ({
   const onDelete = (record) => {
     Modal.confirm({
       title: "Are you sure you want to delete this Store?",
-      icon: <ExclamationCircleOutlined />,
       content: (
-        <div>
+        <div style={{ textAlign: "center", fontWeight: "400" }}>
           <div>This will delete this store permanently.</div>
           <div>You cannot undo this action</div>
         </div>
       ),
-
+      okText: "Yes",
+      cancelText: "No",
+      icon: null,
+      okButtonProps: {
+        style: {
+          background: "rgba(232, 33, 46, 1)",
+          borderColor: "red",
+          width: "109px",
+          height: "36px",
+        },
+      },
+      cancelButtonProps: {
+        style: {
+          width: "109px",
+          height: "36px",
+        },
+      },
+      contentProps: {
+        style: {
+          textAlign: "center",
+        },
+      },
       onOk() {
         setLoading(true);
         let deleteVal = data.filter((i) => {
@@ -386,7 +404,10 @@ const Tabledata = ({
 
   return (
     <div style={{ width: "100%", padding: "10px" }}>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div
+        className="gridicon"
+        style={{ display: "flex", justifyContent: "flex-end" }}
+      >
         <div className="icons">
           {" "}
           <div className="styleExcel">

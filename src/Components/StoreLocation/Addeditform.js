@@ -1,8 +1,11 @@
 import { Form, Input, Select, Row, Col, Button, notification } from "antd";
+import { ReactComponent as CheckCircleOutlined } from "../../Images/tick-FYIa4pkJGr.svg";
+
 import React, { useState, useEffect } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { Upload, message } from "antd";
 import { ReactComponent as CustomUploadIcon } from "../../Images/ant-design_cloud-upload-outlined.svg";
+import { ReactComponent as LocationTool } from "../../Images/locationtool.svg";
 import "./Addeditform.css";
 
 const beforeUpload = (file) => {
@@ -40,6 +43,24 @@ const Addeditform = ({
       url: "",
     },
   ]);
+  //button
+  const [form] = Form.useForm();
+  const [buttonColor, setButtonColor] = useState("rgba(169, 169, 169, 1)"); // Initial grey color
+
+  const onFormValuesChange = (changedValues, allValues) => {
+    // Check if it is an update operation
+    const isUpdateOperation = update && editData;
+
+    // Change button color based on the condition
+    setButtonColor(
+      isUpdateOperation ||
+        Object.values(allValues).every(
+          (value) => value !== undefined && value !== ""
+        )
+        ? "rgba(48, 168, 75, 1)"
+        : "rgba(169, 169, 169, 1)"
+    );
+  };
 
   // Submit
   const onFinish = (values) => {
@@ -66,8 +87,20 @@ const Addeditform = ({
       });
       setInputValue(updatedData);
       notification.success({
-        message: "Submission Successful",
-        description: "Updated Successfully!",
+        message: (
+          <CheckCircleOutlined style={{ color: "rgba(48, 168, 75, 1)" }} />
+        ),
+        description: (
+          <span style={{ color: "rgba(48, 168, 75, 1)" }}>
+            Updated Successfully!!
+          </span>
+        ),
+        icon: null,
+        style: {
+          textAlign: "center",
+          width: 515,
+          height: 267,
+        },
       });
       setTimeout(() => {
         onReset();
@@ -76,8 +109,20 @@ const Addeditform = ({
       const id = inputValue.length + 1;
       setInputValue((prevValues) => [...prevValues, { ...values, id }]);
       notification.success({
-        message: "Submission Successful",
-        description: "New Store Created Successfully!",
+        message: (
+          <CheckCircleOutlined style={{ color: "rgba(48, 168, 75, 1)" }} />
+        ),
+        description: (
+          <span style={{ color: "rgba(48, 168, 75, 1)" }}>
+            New Store Created Successfully!!
+          </span>
+        ),
+        icon: null,
+        style: {
+          textAlign: "center",
+          width: 515,
+          height: 267,
+        },
       });
       setTimeout(() => {
         onReset();
@@ -157,9 +202,11 @@ const Addeditform = ({
   return (
     <div className="form">
       <Form
+        form={form}
         layout="vertical"
         onFinish={onFinish}
         initialValues={update && editData}
+        onValuesChange={onFormValuesChange}
       >
         <Row className="formcss">
           <Col className="uploadfile" span={6}>
@@ -270,6 +317,7 @@ const Addeditform = ({
                     name="timezone"
                   >
                     <Select
+                      placeholder="Select Time Zone"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -296,6 +344,7 @@ const Addeditform = ({
                     name="country"
                   >
                     <Select
+                      placeholder="Select Country"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -323,6 +372,7 @@ const Addeditform = ({
                     name="state"
                   >
                     <Select
+                      placeholder="Select State"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -347,6 +397,7 @@ const Addeditform = ({
                     name="city"
                   >
                     <Select
+                      placeholder="Select City"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -429,6 +480,7 @@ const Addeditform = ({
                         fontWeight: "400px",
                       }}
                       placeholder="Latitude & Longitude"
+                      suffix={<LocationTool width={20} height={20} />}
                       required
                     ></Input>
                   </Form.Item>
@@ -468,8 +520,8 @@ const Addeditform = ({
                         htmlType="button"
                         onClick={onReset}
                         style={{
-                          background: "rgba(48, 168, 75, 1)",
-                          color: "white",
+                          background: "white",
+                          color: "black",
                         }}
                       >
                         Back
@@ -484,9 +536,10 @@ const Addeditform = ({
                         type="primary"
                         htmlType="submit"
                         style={{
-                          background: "rgba(48, 168, 75, 1)",
+                          background: buttonColor,
                           color: "white",
                         }}
+                        disabled={buttonColor === "rgba(169, 169, 169, 1)"}
                       >
                         {update ? "Update" : "Create"}
                       </Button>
