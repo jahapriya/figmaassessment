@@ -12,15 +12,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "./Addeditform.css";
 
-const Tabledata = ({
-  backOption,
-  setEditData,
-  setUpdate,
-  bread,
-  setBread,
-  setImgUrl,
-  imgurl,
-}) => {
+const Tabledata = ({ backOption, setEditData, setUpdate, setBread }) => {
   //filter
   const [filters, setFilters] = useState({});
   const [filterVisible, setFilterVisible] = useState(false);

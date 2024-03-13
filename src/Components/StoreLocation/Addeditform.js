@@ -87,20 +87,8 @@ const Addeditform = ({
       });
       setInputValue(updatedData);
       notification.success({
-        message: (
-          <CheckCircleOutlined style={{ color: "rgba(48, 168, 75, 1)" }} />
-        ),
-        description: (
-          <span style={{ color: "rgba(48, 168, 75, 1)" }}>
-            Updated Successfully!!
-          </span>
-        ),
-        icon: null,
-        style: {
-          textAlign: "center",
-          width: 515,
-          height: 267,
-        },
+        message: "Submission Successful",
+        description: "Updated Successfully!!",
       });
       setTimeout(() => {
         onReset();
@@ -109,20 +97,8 @@ const Addeditform = ({
       const id = inputValue.length + 1;
       setInputValue((prevValues) => [...prevValues, { ...values, id }]);
       notification.success({
-        message: (
-          <CheckCircleOutlined style={{ color: "rgba(48, 168, 75, 1)" }} />
-        ),
-        description: (
-          <span style={{ color: "rgba(48, 168, 75, 1)" }}>
-            New Store Created Successfully!!
-          </span>
-        ),
-        icon: null,
-        style: {
-          textAlign: "center",
-          width: 515,
-          height: 267,
-        },
+        message: "Submission Successful",
+        description: "New Store Created Successfully!!",
       });
       setTimeout(() => {
         onReset();
@@ -244,7 +220,7 @@ const Addeditform = ({
 
           <Col className="fields" span={18}>
             <div className="fieldcontent">
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}> </Col> */}
                 <Col span={12}>
                   <Form.Item
@@ -257,6 +233,7 @@ const Addeditform = ({
                     name="storename"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -279,6 +256,7 @@ const Addeditform = ({
                     name="storeid"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -291,11 +269,12 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}></Col> */}
                 <Col span={24}>
                   <Form.Item label="Description" name="description">
                     <Input
+                      className="inputfieldcss"
                       style={{ height: "48px", width: "860px" }}
                       placeholder="Enter Description"
                       required
@@ -304,7 +283,7 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}></Col> */}
                 <Col span={12}>
                   <Form.Item
@@ -317,6 +296,7 @@ const Addeditform = ({
                     name="timezone"
                   >
                     <Select
+                      className="inputfieldcss"
                       placeholder="Select Time Zone"
                       style={{
                         height: "48px",
@@ -344,6 +324,7 @@ const Addeditform = ({
                     name="country"
                   >
                     <Select
+                      className="inputfieldcss"
                       placeholder="Select Country"
                       style={{
                         height: "48px",
@@ -359,7 +340,7 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}></Col> */}
                 <Col span={12}>
                   <Form.Item
@@ -372,6 +353,7 @@ const Addeditform = ({
                     name="state"
                   >
                     <Select
+                      className="inputfieldcss"
                       placeholder="Select State"
                       style={{
                         height: "48px",
@@ -397,6 +379,7 @@ const Addeditform = ({
                     name="city"
                   >
                     <Select
+                      className="inputfieldcss"
                       placeholder="Select City"
                       style={{
                         height: "48px",
@@ -414,7 +397,7 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}></Col> */}
                 <Col span={12}>
                   <Form.Item
@@ -427,6 +410,7 @@ const Addeditform = ({
                     name="area"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -449,6 +433,7 @@ const Addeditform = ({
                     name="pincode"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -461,7 +446,7 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="storecss">
                 {/* <Col span={4}></Col> */}
                 <Col span={12}>
                   <Form.Item
@@ -474,6 +459,7 @@ const Addeditform = ({
                     name="latlong"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -497,6 +483,7 @@ const Addeditform = ({
                     name="Enter Zone"
                   >
                     <Input
+                      className="inputfieldcss"
                       style={{
                         height: "48px",
                         width: "400px",
@@ -509,7 +496,7 @@ const Addeditform = ({
                 </Col>
               </Row>
 
-              <div className="buttoncss">
+              <div className="buttoncss storecss">
                 <Row>
                   <Col span={10}>
                     {" "}

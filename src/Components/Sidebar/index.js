@@ -27,14 +27,17 @@ function Sidebar() {
       ),
     ]),
   ];
+  const [first, setfirst] = useState(false);
   return (
     <div className="sidebar">
       <Sider
         theme="light"
         breakpoint="lg"
+        width={first ? 270 : 215}
         collapsedWidth="0"
         className={!collapse ? "siderroll" : ""}
         onBreakpoint={(broken) => {
+          setfirst(broken);
           console.log(broken);
         }}
         onCollapse={(collapsed, type) => {

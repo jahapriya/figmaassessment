@@ -6,7 +6,12 @@ html {
   font-size: 500;
 }
 .custom-font {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+.ant-modal-confirm-btns {
+  text-align: unset;
+  margin-top: 28px !important;
+  margin-right: 179px;
 }
 
 .language {
@@ -321,13 +326,23 @@ html {
     color: black !important;
     font-family: "Poppins", sans-serif;
   }
+  .ant-col.ant-col-10.css-dev-only-do-not-override-1drr2mu {
+    position: relative;
+    right: 33px;
+  }
+  .inputfieldcss {
+    width: 200px !important;
+  }
+  .storecss {
+    display: contents;
+  }
   /* .siderroll
     > .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {
     margin-left: 90px;
     margin-top: 4px;
   } */
   .siderroll > span {
-    margin-left: 190px;
+    margin-left: 250px;
     margin-top: 4px;
   }
   .ant-layout-sider-zero-width-trigger.ant-layout-sider-zero-width-trigger-left {

@@ -25,7 +25,7 @@ const Topbar = () => {
   ];
 
   return (
-    <header>
+    <div>
       <div className="topbar-container">
         <Row>
           <Col span={14} />
@@ -78,7 +78,7 @@ const Topbar = () => {
           </Col>
         </Row>
       </div>
-    </header>
+    </div>
   );
 };
 
