@@ -11,7 +11,7 @@ html {
 .ant-modal-confirm-btns {
   text-align: unset;
   margin-top: 28px !important;
-  margin-right: 179px;
+  margin-right: 158px;
 }
 
 .language {
@@ -240,6 +240,7 @@ html {
 }
 
 .form {
+  padding-left: 20px;
   width: 100%;
   margin-top: 3%;
   padding-right: 30px;
