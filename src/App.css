@@ -27,13 +27,13 @@ html {
   align-items: center;
 }
 .ant-upload-wrapper.avatar-uploader.css-dev-only-do-not-override-1drr2mu.ant-upload-picture-card-wrapper {
-  margin-left: 35px;
+  margin-left: 20px !important;
 }
 .fields {
-  padding: 30px 15px 30px 15px;
+  padding: 15px 2px 15px 2px !important;
   border: 0.01px solid rgba(202, 202, 202, 1);
   border-radius: 8px;
-  max-height: 448px;
+  max-height: 435px !important;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -47,7 +47,7 @@ html {
     /* margin-top: 25px !important; */
   }
   .fields {
-    margin-top: 238px !important;
+    margin-top: 170px !important;
     border-right: 0.01pxsolid rgba(202, 202, 202, 1);
     border-radius: 5px;
   }
@@ -328,8 +328,8 @@ html {
     font-family: "Poppins", sans-serif;
   }
   .ant-col.ant-col-10.css-dev-only-do-not-override-1drr2mu {
-    position: relative;
-    right: 38px;
+    position: sticky !important;
+    right: 35px !important;
   }
 
   .inputfieldcss {
