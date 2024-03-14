@@ -33,7 +33,7 @@ function Sidebar() {
       <Sider
         theme="light"
         breakpoint="lg"
-        width={first ? 270 : 215}
+        width={first ? 300 : 215}
         collapsedWidth="0"
         className={!collapse ? "siderroll" : ""}
         onBreakpoint={(broken) => {

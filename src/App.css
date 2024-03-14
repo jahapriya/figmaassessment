@@ -240,7 +240,7 @@ html {
 }
 
 .form {
-  padding-left: 20px;
+  padding-left: 25px;
   width: 100%;
   margin-top: 3%;
   padding-right: 30px;
@@ -329,10 +329,11 @@ html {
   }
   .ant-col.ant-col-10.css-dev-only-do-not-override-1drr2mu {
     position: relative;
-    right: 33px;
+    right: 38px;
   }
+
   .inputfieldcss {
-    width: 200px !important;
+    width: 185px !important;
   }
   .storecss {
     display: contents;
